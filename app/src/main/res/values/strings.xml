@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">training-mobile</string>
+    <string name="offline_mode">Offline Mode</string>
+    <string name="online_mode">Online Mode</string>
+    <string name="favorite_button">Favorite Button</string>
+    <string name="nba_team_logo">Nba Team Logo</string>
+    <string name="delete_button">Delete Button</string>
+    <string name="go_to_offline_mode">Go to offline_mode</string>
+    <string name="update_teams">Update Teams</string>
 </resources>
