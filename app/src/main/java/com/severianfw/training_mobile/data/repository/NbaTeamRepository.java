@@ -3,7 +3,6 @@ package com.severianfw.training_mobile.data.repository;
 import android.app.Application;
 
 import com.severianfw.training_mobile.data.local.NbaTeamDao;
-import com.severianfw.training_mobile.data.local.NbaTeamEntity;
 import com.severianfw.training_mobile.data.local.NbaTeamRoomDatabase;
 import com.severianfw.training_mobile.data.remote.NbaTeamItem;
 

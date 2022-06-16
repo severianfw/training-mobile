@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Toast;
 
 import com.severianfw.training_mobile.data.remote.NbaTeamItem;
 import com.severianfw.training_mobile.databinding.ActivityMainBinding;
@@ -35,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
                 setupRecyclerView(nbaTeamItems);
             }
         });
-        mBinding.tvOfflineMode.setOnClickListener(view -> startActivity(new Intent(this, OfflineActivity.class)));
+        mBinding.btnOfflineMode.setOnClickListener(view -> startActivity(new Intent(this, OfflineActivity.class)));
     }
 
     void setupRecyclerView(List<NbaTeamItem> nbaTeamItems) {
@@ -49,6 +50,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onInsertClick(NbaTeamItem nbaTeamItem) {
                 mViewModel.insertNbaTeams(nbaTeamItem);
+                Toast.makeText(MainActivity.this, nbaTeamItem.getName() + " inserted", Toast.LENGTH_SHORT).show();
             }
 
             @Override

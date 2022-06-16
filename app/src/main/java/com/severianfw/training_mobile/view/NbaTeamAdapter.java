@@ -39,18 +39,15 @@ public class NbaTeamAdapter extends RecyclerView.Adapter<NbaTeamAdapter.ViewHold
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         holder.bind(nbaTeamItems.get(position));
-        holder.mBinding.btnFav.setOnClickListener(view -> {
-            holder.mBinding.btnFav.setImageResource(R.drawable.ic_star_filled);
-            onItemClickCallback.onInsertClick(nbaTeamItems.get(position));
-        });
+        holder.mBinding.btnSave.setOnClickListener(view -> onItemClickCallback.onInsertClick(nbaTeamItems.get(position)));
         holder.mBinding.btnDelete.setOnClickListener(view -> onItemClickCallback.onDeleteClick(nbaTeamItems.get(position)));
         holder.itemView.setOnClickListener(view -> onItemClickCallback.onItemClick(nbaTeamItems.get(position)));
 
         if (isOfflineMode) {
-            holder.mBinding.btnFav.setVisibility(View.GONE);
+            holder.mBinding.btnSave.setVisibility(View.GONE);
             holder.mBinding.btnDelete.setVisibility(View.VISIBLE);
         } else {
-            holder.mBinding.btnFav.setVisibility(View.VISIBLE);
+            holder.mBinding.btnSave.setVisibility(View.VISIBLE);
             holder.mBinding.btnDelete.setVisibility(View.GONE);
         }
     }

@@ -8,13 +8,13 @@
     android:paddingVertical="8dp">
 
     <ImageButton
-        android:id="@+id/btn_fav"
+        android:id="@+id/btn_save"
         android:layout_width="24dp"
         android:layout_height="24dp"
         android:background="@null"
-        android:contentDescription="@string/favorite_button"
+        android:contentDescription="@string/save_button"
         android:scaleType="center"
-        android:src="@drawable/ic_star_black"
+        android:src="@drawable/ic_save"
         android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
