@@ -2,6 +2,10 @@ package com.severianfw.training_mobile.data.remote;
 
 import com.google.gson.annotations.SerializedName;
 
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+
+@Entity
 public class NbaTeamItem {
 
 	@SerializedName("name")
@@ -10,6 +14,7 @@ public class NbaTeamItem {
 	@SerializedName("logo")
 	private String logo;
 
+	@PrimaryKey
 	@SerializedName("id")
 	private int id;
 

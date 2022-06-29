@@ -20,6 +20,12 @@ public class NbaTeamAdapter extends RecyclerView.Adapter<NbaTeamAdapter.ViewHold
         this.nbaTeamItems = nbaTeamItems;
     }
 
+    OnItemClickCallback mOnItemClickCallback;
+
+    public void setOnItemClickCallback(OnItemClickCallback onItemClickCallback) {
+        this.mOnItemClickCallback = onItemClickCallback;
+    }
+
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -30,6 +36,7 @@ public class NbaTeamAdapter extends RecyclerView.Adapter<NbaTeamAdapter.ViewHold
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         holder.bind(nbaTeamItems.get(position));
+        holder.binding.btnSave.setOnClickListener(view -> mOnItemClickCallback.onInsertClick(nbaTeamItems.get(position)));
     }
 
     @Override
@@ -51,5 +58,9 @@ public class NbaTeamAdapter extends RecyclerView.Adapter<NbaTeamAdapter.ViewHold
                     .load(nbaTeamItem.getLogo())
                     .into(binding.ivLogo);
         }
+    }
+
+    public interface OnItemClickCallback {
+        void onInsertClick(NbaTeamItem nbaTeamItem);
     }
 }
